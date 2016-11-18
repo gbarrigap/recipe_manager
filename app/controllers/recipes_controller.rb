@@ -13,6 +13,8 @@ class RecipesController < ApplicationController
   end
 
   def create
+    binding.pry
+
     @recipe = Recipe.new(recipe_params)
     @recipe.chef = Chef.find(2)
 
@@ -44,7 +46,7 @@ class RecipesController < ApplicationController
   private
 
     def recipe_params
-      params.require(:recipe).permit(:name, :summary, :description)
+      params.require(:recipe).permit(:name, :summary, :description, :picture)
     end
 
 end
