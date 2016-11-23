@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
   get '/landing', to: 'pages#home'
 
-  resources :recipes
+  resources :recipes do
+    post 'like'
+  end
 
 end

@@ -13,10 +13,21 @@
     <div class="show_recipe">
       <%= image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
     </div>
-    
+
     <div class="well">
       <p><strong>Steps:</strong></p>
       <%= simple_format(@recipe.description) %>
+      <div class="pull-right">
+        <%= link_to recipe_like_path(@recipe, like: true), method: :post do %>
+          <i class="fa fa-thumbs-o-up"></i>
+        <% end %>
+        <span class="badge"><%= @recipe.thumbs_up_total %></span>
+
+        <%= link_to recipe_like_path(@recipe, like: false), method: :post do %>
+          <i class="fa fa-thumbs-o-down"></i>
+        <% end %>
+        <span class="badge"><%= @recipe.thumbs_down_total %></span>
+      </div>
     </div>
   </div>
 </div>
