@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/landing', to: 'pages#home'
 
   resources :recipes do
-    post 'like'
+    member do
+      post 'like'
+    end
   end
 
   resources :chefs, except: [:new]
