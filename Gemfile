@@ -42,6 +42,8 @@ gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
+gem 'fog', '~> 1.38'
+
 gem 'font-awesome-rails', '~> 4.7'
 
 group :development, :test do
