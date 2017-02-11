@@ -17,8 +17,14 @@
     </div>
 
     <div class="well">
+      <% if @recipe.styles.any? then %>
       <p>Styles: <%= render @recipe.styles %></p>
+      <% end %>
+
+      <% if @recipe.ingredients.any? then %>
       <p>Ingredients: <%= render @recipe.ingredients %></p>
+      <% end %>
+
       <p><strong>Steps:</strong></p>
       <%= simple_format(@recipe.description) %>
       <div class="pull-right">
